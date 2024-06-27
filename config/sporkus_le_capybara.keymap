@@ -1,0 +1,157 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
+#define BASE 0
+#define ONE  1
+#define TWO  2
+#define THREE 3
+
+&mt {
+    flavor = "tap-preferred";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <150>;
+};
+
+&lt {
+    flavor = "tap-preferred";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <150>;
+};
+
+&caps_word {
+    continue-list = <UNDERSCORE MINUS BACKSPACE DELETE>;
+};
+
+/ {
+    //chosen {
+    //    zmk,matrix_transform = &transform_with_encoder;
+    //};
+
+    behaviors {
+        st: shift_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SFT_TAP";
+            #binding-cells = <2>;
+            tapping-term-ms = <100>;
+            quick-tap-ms = <75>;
+            flavor = "tap-preferred";
+            bindings =
+                <&kp>,
+                <&kp>;
+
+            global-quick-tap;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        combo_capsword {
+            timeout-ms = <60>;
+            key-positions = <12 17>;
+            bindings = <&caps_word>;
+        };
+
+        new_combo {
+            bindings = <&kp ENTER>;
+            key-positions = <23 24>;
+        };
+
+        hold_backspace {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <0 1>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            label = "Default";
+
+            // ---------------------------------------------------------------------------------------------------------------------------------
+            // |  Q  |  W  |  E   |  R   |  T   |   MUTE    |  Y   |  U    |  I    |  O   |   P   |
+            // |LG(A)|LA(S)|LS(D) | LC(F)|  G   |           |  H   |RC(J)  |RS(K)  |RA(L) |RG(')  |
+            // |  Z  |  X  |  C   |  V   |  B   |           |  N   |  M    |  ,    |  .   |   /   |
+            //              |   MO(3)  |  BSPC  |           |LT(SPACE)| MO(2) |
+
+            bindings = <
+     &kp Q       &kp W        &kp E        &kp R            &kp T              &kp Y        &kp U        &kp I       &kp O          &kp P
+&mt LGUI A  &mt LALT S  &st LSHFT D  &mt LCTRL F            &kp G              &kp H  &mt RCTRL J  &st RSHFT K  &mt RALT L  &mt RGUI APOS
+     &kp Z       &kp X        &kp C        &kp V            &kp B              &kp N        &kp M    &kp COMMA     &kp DOT       &kp FSLH
+                          &mo THREE               &lt 4 BACKSPACE      &lt ONE SPACE                   &mo TWO
+&kp C_MUTE
+            >;
+        };
+
+        layer_1 {
+            label = "One";
+
+            // ---------------------------------------------------------------------------------------------------------------------------------
+            // |  1  |  2  |  3   |  4   |  5   |   ESC     |  6   |  7    |  8    |  9   |   0   |
+            // |  !  |  @  |  #   |  $   |  %   |           |  ^   |  &    |  *    |  =   |   ;   |
+            // |  _  |  \  |  [   |  {   |  (   |           |  )   |  }    |  ]    |      |   -   |
+            //              |   TAB   |   RET   |           |   TRANS   |CAPS|
+
+            bindings = <
+   &kp N1    &kp N2    &kp N3    &kp N4     &kp N5         &kp N6    &kp N7    &kp N8     &kp N9        &kp N0
+ &kp EXCL    &kp AT  &kp HASH  &kp DLLR  &kp PRCNT      &kp CARET  &kp AMPS  &kp STAR  &kp EQUAL      &kp SEMI
+&kp UNDER  &kp BSLH  &kp LBKT  &kp LBRC   &kp LPAR       &kp RPAR  &kp RBRC  &kp RBKT     &trans  &kp KP_MINUS
+                      &kp TAB              &kp RET         &trans            &kp CAPS
+  &kp ESC
+            >;
+        };
+
+        layer_2 {
+            label = "Two";
+
+            // ---------------------------------------------------------------------------------------------------------------------------------
+            // | DEL |  `  |   ~  |      |      |    TRANS  |      |  PG DN|  UP   | PG UP|       |
+            // |     |     |      |      |ALTTAB|           | HOME | LEFT  |  DOWN |RIGHT |   END |
+            // |     |     |LC(INS)|LS(INS)|    |           |      |  INS  |       |      |       |
+            //              |         |         |           |         |      |
+
+            bindings = <
+&kp DEL  &kp GRAVE    &kp TILDE       &trans       &trans            &trans  &kp PG_DN    &kp UP  &kp PG_UP   &trans
+ &trans     &trans       &trans       &trans  &kp LA(TAB)          &kp HOME   &kp LEFT  &kp DOWN  &kp RIGHT  &kp END
+ &trans     &trans  &kp LC(INS)  &kp LS(INS)       &trans      &kp KP_MINUS    &kp INS    &trans     &trans   &trans
+                         &trans                    &trans            &trans               &trans
+ &trans
+            >;
+        };
+
+        layer_3 {
+            label = "Three";
+
+            // ---------------------------------------------------------------------------------------------------------------------------------
+            // |  F1 |  F2 |  F3  |  F4  |  F5  |   TRANS   | F6   |   F7  |   F8  |  F9  |  F10  |
+            // |LC(A)|LC(S)|      |      |LC(F) |           |      |       |       |      |  F11  |
+            // |LC(Z)|LC(X)|LC(C) |LC(V) |      |           |      |       |       |      |  F12  |
+            //              |         |         |           |         |         |
+
+            bindings = <
+   &kp F1     &kp F2     &kp F3     &kp F4     &kp F5      &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
+&kp LC(A)  &kp LC(S)     &trans     &trans  &kp LC(F)      &trans  &trans  &trans  &trans  &kp F11
+&kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)     &trans      &trans  &trans  &trans  &trans  &kp F12
+                         &trans                &trans      &trans          &trans
+   &trans
+            >;
+        };
+
+        layer_4 {
+            bindings = <
+  &kp KP_PLUS  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_ASTERISK      &trans  &trans  &trans  &trans  &trans
+ &kp KP_MINUS  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6    &kp KP_DIVIDE      &trans  &trans  &trans  &trans  &trans
+&kp BACKSPACE  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3       &kp PERIOD      &trans  &trans  &trans  &trans  &trans
+                                &kp KP_NUMBER_0                            &trans      &trans          &trans
+       &trans
+            >;
+        };
+    };
+};
