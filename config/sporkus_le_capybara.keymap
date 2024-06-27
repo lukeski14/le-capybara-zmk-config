@@ -72,7 +72,7 @@
             label = "Default";
 
             // ---------------------------------------------------------------------------------------------------------------------------------
-            // |  Q  |  W  |  E   |  R   |  T   |   MUTE    |  Y   |  U    |  I    |  O   |   P   |
+            // |  Q  |  W  |  E   |  R   |  T   |           |  Y   |  U    |  I    |  O   |   P   |
             // |LG(A)|LA(S)|LS(D) | LC(F)|  G   |           |  H   |RC(J)  |RS(K)  |RA(L) |RG(')  |
             // |  Z  |  X  |  C   |  V   |  B   |           |  N   |  M    |  ,    |  .   |   /   |
             //              |   MO(3)  |  BSPC  |           |LT(SPACE)| MO(2) |
@@ -82,7 +82,6 @@
 &mt LGUI A  &mt LALT S  &st LSHFT D  &mt LCTRL F  &kp G                &kp H          &mt RCTRL J  &st RSHFT K  &mt RALT L  &mt RGUI APOS
 &kp Z       &kp X       &kp C        &kp V        &kp B                &kp N          &kp M        &kp COMMA    &kp DOT     &kp FSLH
                         &mo THREE                 &lt 4 BACKSPACE      &lt ONE SPACE               &mo TWO
-&kp ESCAPE
             >;
         };
 
@@ -90,7 +89,7 @@
             label = "One";
 
             // ---------------------------------------------------------------------------------------------------------------------------------
-            // |  1  |  2  |  3   |  4   |  5   |   ESC     |  6   |  7    |  8    |  9   |   0   |
+            // |  1  |  2  |  3   |  4   |  5   |           |  6   |  7    |  8    |  9   |   0   |
             // |  !  |  @  |  #   |  $   |  %   |           |  ^   |  &    |  *    |  =   |   ;   |
             // |  _  |  \  |  [   |  {   |  (   |           |  )   |  }    |  ]    |      |   -   |
             //              |   TAB   |   RET   |           |   TRANS   |CAPS|
@@ -100,7 +99,6 @@
 &kp EXCL    &kp AT    &kp HASH  &kp DLLR  &kp PRCNT      &kp CARET  &kp AMPS  &kp STAR  &kp EQUAL  &kp SEMI
 &kp UNDER   &kp BSLH  &kp LBKT  &kp LBRC  &kp LPAR       &kp RPAR   &kp RBRC  &kp RBKT  &kp PLUS   &kp MINUS
                       &kp TAB             &kp RET        &trans               &kp CAPS
-&kp C_MUTE
             >;
         };
 
@@ -108,7 +106,7 @@
             label = "Two";
 
             // ---------------------------------------------------------------------------------------------------------------------------------
-            // | DEL |  `  |   ~  |      |      |    TRANS  |      |  PG DN|  UP   | PG UP|       |
+            // | DEL |  `  |   ~  |      |      |           |      |  PG DN|  UP   | PG UP|       |
             // |     |     |      |      |ALTTAB|           | HOME | LEFT  |  DOWN |RIGHT |   END |
             // |     |     |LC(INS)|LS(INS)|    |           |      |  INS  |       |      |       |
             //              |         |         |           |         |      |
@@ -118,7 +116,6 @@
 &trans   &trans     &trans       &trans       &kp LA(TAB)      &kp HOME   &kp LEFT   &kp DOWN  &kp RIGHT  &kp END
 &trans   &trans     &kp LC(INS)  &kp LS(INS)  &trans           &kp MINUS  &kp INS    &trans    &trans     &trans
                     &trans                    &trans           &trans                &trans
-&trans
             >;
         };
 
@@ -126,7 +123,7 @@
             label = "Three";
 
             // ---------------------------------------------------------------------------------------------------------------------------------
-            // |  F1 |  F2 |  F3  |  F4  |  F5  |   TRANS   | F6   |   F7  |   F8  |  F9  |  F10  |
+            // |  F1 |  F2 |  F3  |  F4  |  F5  |           | F6   |   F7  |   F8  |  F9  |  F10  |
             // |LC(A)|LC(S)|      |      |LC(F) |           |      |       |       |      |  F11  |
             // |LC(Z)|LC(X)|LC(C) |LC(V) |      |           |      |       |       |      |  F12  |
             //              |         |         |           |         |         |
@@ -136,7 +133,6 @@
 &kp LC(A)       &kp LC(S)  &kp LC(D)  &kp LC(F)  &trans      &trans  &trans  &trans  &trans  &kp F11
 &kp LC(Z)       &kp LC(X)  &kp LC(C)  &kp LC(V)  &trans      &trans  &trans  &trans  &trans  &kp F12
                            &trans                &trans      &trans          &trans
-&kp C_BKLT_TOG
             >;
         };
 
@@ -146,7 +142,6 @@
 &kp KP_MINUS   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_DIVIDE        &trans  &trans  &trans  &trans  &trans
 &kp BACKSPACE  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD           &trans  &trans  &trans  &trans  &trans
                                 &kp KP_NUMBER_0                   &kp BACKSPACE        &trans          &to 0
-&trans
             >;
         };
     };
