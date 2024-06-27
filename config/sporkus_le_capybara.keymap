@@ -24,9 +24,7 @@
     quick-tap-ms = <150>;
 };
 
-&caps_word {
-    continue-list = <UNDERSCORE MINUS BACKSPACE DELETE>;
-};
+&caps_word { continue-list = <UNDERSCORE MINUS BACKSPACE DELETE>; };
 
 / {
     //chosen {
@@ -41,9 +39,7 @@
             tapping-term-ms = <100>;
             quick-tap-ms = <75>;
             flavor = "tap-preferred";
-            bindings =
-                <&kp>,
-                <&kp>;
+            bindings = <&kp>, <&kp>;
 
             global-quick-tap;
         };
@@ -82,11 +78,11 @@
             //              |   MO(3)  |  BSPC  |           |LT(SPACE)| MO(2) |
 
             bindings = <
-     &kp Q       &kp W        &kp E        &kp R            &kp T              &kp Y        &kp U        &kp I       &kp O          &kp P
-&mt LGUI A  &mt LALT S  &st LSHFT D  &mt LCTRL F            &kp G              &kp H  &mt RCTRL J  &st RSHFT K  &mt RALT L  &mt RGUI APOS
-     &kp Z       &kp X        &kp C        &kp V            &kp B              &kp N        &kp M    &kp COMMA     &kp DOT       &kp FSLH
-                          &mo THREE               &lt 4 BACKSPACE      &lt ONE SPACE                   &mo TWO
-&kp C_MUTE
+&kp Q       &kp W       &kp E        &kp R        &kp T                &kp Y          &kp U        &kp I        &kp O       &kp P
+&mt LGUI A  &mt LALT S  &st LSHFT D  &mt LCTRL F  &kp G                &kp H          &mt RCTRL J  &st RSHFT K  &mt RALT L  &mt RGUI APOS
+&kp Z       &kp X       &kp C        &kp V        &kp B                &kp N          &kp M        &kp COMMA    &kp DOT     &kp FSLH
+                        &mo THREE                 &lt 4 BACKSPACE      &lt ONE SPACE               &mo TWO
+&kp ESCAPE
             >;
         };
 
@@ -100,11 +96,11 @@
             //              |   TAB   |   RET   |           |   TRANS   |CAPS|
 
             bindings = <
-   &kp N1    &kp N2    &kp N3    &kp N4     &kp N5         &kp N6    &kp N7    &kp N8     &kp N9        &kp N0
- &kp EXCL    &kp AT  &kp HASH  &kp DLLR  &kp PRCNT      &kp CARET  &kp AMPS  &kp STAR  &kp EQUAL      &kp SEMI
-&kp UNDER  &kp BSLH  &kp LBKT  &kp LBRC   &kp LPAR       &kp RPAR  &kp RBRC  &kp RBKT     &trans  &kp KP_MINUS
-                      &kp TAB              &kp RET         &trans            &kp CAPS
-  &kp ESC
+&kp N1      &kp N2    &kp N3    &kp N4    &kp N5         &kp N6     &kp N7    &kp N8    &kp N9     &kp N0
+&kp EXCL    &kp AT    &kp HASH  &kp DLLR  &kp PRCNT      &kp CARET  &kp AMPS  &kp STAR  &kp EQUAL  &kp SEMI
+&kp UNDER   &kp BSLH  &kp LBKT  &kp LBRC  &kp LPAR       &kp RPAR   &kp RBRC  &kp RBKT  &kp PLUS   &kp MINUS
+                      &kp TAB             &kp RET        &trans               &kp CAPS
+&kp C_MUTE
             >;
         };
 
@@ -118,11 +114,11 @@
             //              |         |         |           |         |      |
 
             bindings = <
-&kp DEL  &kp GRAVE    &kp TILDE       &trans       &trans            &trans  &kp PG_DN    &kp UP  &kp PG_UP   &trans
- &trans     &trans       &trans       &trans  &kp LA(TAB)          &kp HOME   &kp LEFT  &kp DOWN  &kp RIGHT  &kp END
- &trans     &trans  &kp LC(INS)  &kp LS(INS)       &trans      &kp KP_MINUS    &kp INS    &trans     &trans   &trans
-                         &trans                    &trans            &trans               &trans
- &trans
+&kp DEL  &kp GRAVE  &kp TILDE    &trans       &trans           &trans     &kp PG_DN  &kp UP    &kp PG_UP  &kp PIPE
+&trans   &trans     &trans       &trans       &kp LA(TAB)      &kp HOME   &kp LEFT   &kp DOWN  &kp RIGHT  &kp END
+&trans   &trans     &kp LC(INS)  &kp LS(INS)  &trans           &kp MINUS  &kp INS    &trans    &trans     &trans
+                    &trans                    &trans           &trans                &trans
+&trans
             >;
         };
 
@@ -136,21 +132,21 @@
             //              |         |         |           |         |         |
 
             bindings = <
-   &kp F1     &kp F2     &kp F3     &kp F4     &kp F5      &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
-&kp LC(A)  &kp LC(S)     &trans     &trans  &kp LC(F)      &trans  &trans  &trans  &trans  &kp F11
-&kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)     &trans      &trans  &trans  &trans  &trans  &kp F12
-                         &trans                &trans      &trans          &trans
-   &trans
+&kp F1          &kp F2     &kp F3     &kp F4     &kp F5      &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
+&kp LC(A)       &kp LC(S)  &kp LC(D)  &kp LC(F)  &trans      &trans  &trans  &trans  &trans  &kp F11
+&kp LC(Z)       &kp LC(X)  &kp LC(C)  &kp LC(V)  &trans      &trans  &trans  &trans  &trans  &kp F12
+                           &trans                &trans      &trans          &trans
+&kp C_BKLT_TOG
             >;
         };
 
         layer_4 {
             bindings = <
-  &kp KP_PLUS  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_ASTERISK      &trans  &trans  &trans  &trans  &trans
- &kp KP_MINUS  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6    &kp KP_DIVIDE      &trans  &trans  &trans  &trans  &trans
-&kp BACKSPACE  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3       &kp PERIOD      &trans  &trans  &trans  &trans  &trans
-                                &kp KP_NUMBER_0                            &trans      &trans          &trans
-       &trans
+&kp KP_PLUS    &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_ASTERISK      &trans  &trans  &trans  &trans  &trans
+&kp KP_MINUS   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_DIVIDE        &trans  &trans  &trans  &trans  &trans
+&kp BACKSPACE  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD           &trans  &trans  &trans  &trans  &trans
+                                &kp KP_NUMBER_0                   &kp BACKSPACE        &trans          &to 0
+&trans
             >;
         };
     };
