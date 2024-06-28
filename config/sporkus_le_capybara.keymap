@@ -53,16 +53,6 @@
             key-positions = <12 17>;
             bindings = <&caps_word>;
         };
-
-        new_combo {
-            bindings = <&kp ENTER>;
-            key-positions = <23 24>;
-        };
-
-        hold_backspace {
-            bindings = <&kp BACKSPACE>;
-            key-positions = <0 1>;
-        };
     };
 
     keymap {
@@ -78,10 +68,10 @@
             //              |   MO(3)  |  BSPC  |           |LT(SPACE)| MO(2) |
 
             bindings = <
-&kp Q       &kp W       &kp E        &kp R        &kp T                &kp Y          &kp U        &kp I        &kp O       &kp P
-&mt LGUI A  &mt LALT S  &st LSHFT D  &mt LCTRL F  &kp G                &kp H          &mt RCTRL J  &st RSHFT K  &mt RALT L  &mt RGUI APOS
-&kp Z       &kp X       &kp C        &kp V        &kp B                &kp N          &kp M        &kp COMMA    &kp DOT     &kp FSLH
-                        &mo THREE                 &lt 4 BACKSPACE      &lt ONE SPACE               &mo TWO
+&kp Q       &kp W       &kp E        &kp R        &kp T              &kp Y        &kp U        &kp I        &kp O       &kp P
+&mt LGUI A  &mt LALT S  &st LSHFT D  &mt LCTRL F  &kp G              &kp H        &mt RCTRL J  &st RSHFT K  &mt RALT L  &mt RGUI APOS
+&kp Z       &kp X       &kp C        &kp V        &kp B              &kp N        &kp M        &kp COMMA    &kp DOT     &kp FSLH
+                        &mo 3                     &kp BACKSPACE      &lt 1 SPACE               &mo 2
             >;
         };
 
@@ -95,10 +85,10 @@
             //              |   TAB   |   RET   |           |   TRANS   |CAPS|
 
             bindings = <
-&kp N1      &kp N2    &kp N3    &kp N4    &kp N5         &kp N6     &kp N7    &kp N8    &kp N9     &kp N0
-&kp EXCL    &kp AT    &kp HASH  &kp DLLR  &kp PRCNT      &kp CARET  &kp AMPS  &kp STAR  &kp EQUAL  &kp SEMI
-&kp UNDER   &kp BSLH  &kp LBKT  &kp LBRC  &kp LPAR       &kp RPAR   &kp RBRC  &kp RBKT  &kp PLUS   &kp MINUS
-                      &kp TAB             &kp RET        &trans               &kp CAPS
+&kp N1     &kp N2    &kp N3    &kp N4    &kp N5         &kp N6     &kp N7    &kp N8    &kp N9     &kp N0
+&kp EXCL   &kp AT    &kp HASH  &kp DLLR  &kp PRCNT      &kp CARET  &kp AMPS  &kp STAR  &kp EQUAL  &kp SEMI
+&kp UNDER  &kp BSLH  &kp LBKT  &kp LBRC  &kp LPAR       &kp RPAR   &kp RBRC  &kp RBKT  &kp PLUS   &kp MINUS
+                     &kp TAB             &kp RET        &trans               &kp CAPS
             >;
         };
 
@@ -129,19 +119,10 @@
             //              |         |         |           |         |         |
 
             bindings = <
-&kp F1          &kp F2     &kp F3     &kp F4     &kp F5      &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
-&kp LC(A)       &kp LC(S)  &kp LC(D)  &kp LC(F)  &trans      &trans  &trans  &trans  &trans  &kp F11
-&kp LC(Z)       &kp LC(X)  &kp LC(C)  &kp LC(V)  &trans      &trans  &trans  &trans  &trans  &kp F12
-                           &trans                &trans      &trans          &trans
-            >;
-        };
-
-        layer_4 {
-            bindings = <
-&kp KP_PLUS    &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_ASTERISK      &trans  &trans  &trans  &trans  &trans
-&kp KP_MINUS   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_DIVIDE        &trans  &trans  &trans  &trans  &trans
-&kp BACKSPACE  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD           &trans  &trans  &trans  &trans  &trans
-                                &kp KP_NUMBER_0                   &kp BACKSPACE        &trans          &to 0
+&kp F1     &kp F2     &kp F3     &kp F4     &kp F5      &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
+&kp LC(A)  &kp LC(S)  &kp LC(D)  &kp LC(F)  &trans      &trans  &trans  &trans  &trans  &kp F11
+&kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &trans      &trans  &trans  &trans  &trans  &kp F12
+                      &trans                &trans      &trans          &trans
             >;
         };
     };
